@@ -1,12 +1,9 @@
 class Code4{
-    int a=10;
-    public static int print(){
-        return 0;
-
-    }
     public static void main(String[]args){
-        int res = print();
-        System.out.println(res);
-        
+       char ch = 'A';
+       int ascii = (int)ch;
+      System.out.println("character: " + ch);
+      System.out.println("ascii value:" +ascii);
+
     }
 }

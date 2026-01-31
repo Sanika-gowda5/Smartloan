@@ -1,13 +1,11 @@
 class Code1{
-    public static void add(int x,int y){
-        int ans = x + y;
-        System.out.println(ans);
-    
-    }
     public static void main(String[]args){
-        add(20,30);
-        
+        int a = 20;
+        int b = 10;
+        System.out.println(a+b);
+        System.out.println(a-b);
+        System.out.println(a*b);
+        System.out.println(a/b);
     }
 
-
-    }
+}
