@@ -1,19 +1,37 @@
+import java.util.Scanner;
 
+public class Code12 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
 
+        System.out.print("Enter number of columns: ");
+        int cols = sc.nextInt();
 
-class Code12{
-    public static void main(String[]args){
-        int a = 45;
-        int b = 55;
-        int c = 77;
-        if(a>b || b>c){
-        System.out.println("largest:"+ a);
+        int[][] arr = new int[rows][cols];
+
+        System.out.println("Enter elements of the array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                arr[i][j] = sc.nextInt();
+            }
         }
-        else {
-        System.out.println("largest:"+ c);
-        }
-        
 
+        int largest = arr[0][0];  // assume first element is largest
+
+        // Find the largest element
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (arr[i][j] > largest) {
+                    largest = arr[i][j];
+                }
+            }
+        }
+
+        System.out.println("Largest element in the 2D array = " + largest);
+
+        sc.close();
     }
 }
