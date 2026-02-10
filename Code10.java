@@ -1,43 +1,24 @@
-import java.util.Scanner;
-
-public class Code10 {
+public class Code10{
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        int limit = 50000;
 
-        int[][] A = new int[2][2];
-        int[][] B = new int[2][2];
-        int[][] sum = new int[2][2];
-
-        System.out.println("Enter elements of first 2x2 matrix:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                A[i][j] = sc.nextInt();
-            }
+        // --- Program 1: Using String Concatenation ---
+        long startTime1 = System.currentTimeMillis();
+        String str = "";
+        for (int i = 1; i <= limit; i++) {
+            str += i; 
         }
+        long endTime1 = System.currentTimeMillis();
+        System.out.println("String (+=) Time: " + (endTime1 - startTime1) + " ms");
 
-        System.out.println("Enter elements of second 2x2 matrix:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                B[i][j] = sc.nextInt();
-            }
+        // --- Program 2: Using StringBuilder ---
+        long startTime2 = System.currentTimeMillis();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= limit; i++) {
+            sb.append(i);
         }
-
-        // Adding matrices
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                sum[i][j] = A[i][j] + B[i][j];
-            }
-        }
-
-        // Display result
-        System.out.println("Sum of the two matrices:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                System.out.print(sum[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        sc.close();
+        String result = sb.toString();
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("StringBuilder Time: " + (endTime2 - startTime2) + " ms");
     }
 }
