@@ -1,30 +1,22 @@
-public class Code2 {
+import java.util.TreeMap;
+ 
+
+public class Code2{
+
     public static void main(String[] args) {
-        String input = "madam";
-        
-        if (isPalindrome(input)) {
-            System.out.println("Input: (" + input + ")");
-            System.out.println("Output: palindrome");
-        } else {
-            System.out.println("Output: not a palindrome");
-        }
+        TreeMap<String, String> capitalCities = new TreeMap<String, String>();
+
+        // Add keys and values(Country,city)
+        capitalCities.put("England","London");
+        capitalCities.put("India","New Delhi");
+        capitalCities.put("Austria","Wien");
+        capitalCities.put("Norway","Oslo");
+        capitalCities.put("Norway","Oslo");
+        capitalCities.put("USA","Washington DC");
+
+        System.out.println(capitalCities);
     }
-
-    public static boolean isPalindrome(String s) {
-        int left = 0;
-        int right = s.length() - 1;
-
-        while (left < right) {
-            // Skip spaces if they exist
-            while (left < right && s.charAt(left) == ' ') left++;
-            while (left < right && s.charAt(right) == ' ') right--;
-
-            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
     }
-}
+    
+    
+

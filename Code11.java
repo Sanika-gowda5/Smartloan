@@ -1,28 +1,17 @@
-import java.util.Scanner;
+public class Code11{
+    static void checkAge(int age) throws ArithmeticException{
+        if(age<18){
+            throw new ArithmeticException("Access denied-you must be at least 18 years old");
 
-public class Code11 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter number of rows: ");
-        int rows = sc.nextInt();
+        }
+        else{
+            System.out.println("Access granted-you are old enough!");
 
-        System.out.print("Enter number of columns: ");
-        int cols = sc.nextInt();
-
-        int[][] matrix = new int[rows][cols];
-        int sum = 0;
-
-        System.out.println("Enter matrix elements:");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                matrix[i][j] = sc.nextInt();
-                sum += matrix[i][j];   // Add each element to sum
-            }
         }
 
-        System.out.println("Total sum of all elements = " + sum);
-
-        sc.close();
     }
-}
+    public static void main(String[] args) {
+        checkAge(15);
+    }
+    }
